@@ -1,36 +1,68 @@
 # PostgreSQL Database Administration Lab
 
 ## Overview
-A personal DBA lab using a fictional payments database to demonstrate
-PostgreSQL administration, security, performance investigation,
-and recovery testing.
+A hands-on PostgreSQL DBA portfolio project using a fictional
+payments database.
 
-## Status
-In progress — environment preparation.
-
-## Planned Activities
-1. Set up and verify the PostgreSQL environment.
-2. Create a sample database and application schema.
-3. Populate tables with synthetic data.
-4. Configure database users, roles and permissions.
-5. Investigate query performance and test indexing changes.
-6. Back up and restore the database.
-7. Document test results and lessons learned.
-
-## Planned Evidence
-- SQL scripts
-- Database architecture diagram
-- Access-control test results
-- Query plans and performance measurements
-- Backup and restore scripts
-- Recovery validation results
+The lab demonstrates database setup, relational schema design,
+data integrity and SQL reporting. Additional security, performance,
+and recovery exercises are planned.
 
 ## Environment
-To be documented after setup.
+- Host operating system: Windows
+- Guest operating system: Ubuntu 26.10
+- Database: PostgreSQL 17.12
+- Desktop administration tool: pgAdmin 4
+- Database name: payments_lab
+- Application schema: payments
+
+## Completed
+- Installed PostgreSQL on an Ubuntu virtual machine.
+- Verified database connectivity.
+- Connected from pgAdmin on Windows.
+- Created a dedicated database owner and application schema.
+- Created customers, accounts and transactions tables.
+- Inserted synthetic sample data.
+- Verified customer-account-transaction relationships using joins.
+
+## Database Structure
+- customers: fictional customer details
+- accounts: accounts linked to customers
+- transactions: credits and debits linked to accounts
+
+Relationship:
+customers → accounts → transactions
+
+## Sample Data
+- 3 customers
+- 3 accounts
+- 6 transactions
+
+Transaction examples include successful, pending and failed statuses.
+
+## Implemented Constraints
+- Primary keys
+- Foreign keys
+- Unique email addresses, account numbers and transaction references
+- Required fields using NOT NULL
+- Positive transaction amounts
+- Restricted account and transaction statuses
+
+## Repository Contents
+- docs/: environment notes and recorded test results
+- sql/: database setup, table definitions and verification scripts
+- screenshots/: evidence from the lab
+
+## Planned Work
+- Invalid-data constraint testing
+- Reporting-role access control
+- Performance investigation and indexing
+- Backup and restore testing
+
+## Limitations
+This is a learning lab, not a production payment platform.
+It does not implement double-entry bookkeeping or account balances.
 
 ## Data and Security
-This project uses synthetic data only.
-No employer data, customer records or real credentials will be published.
-
-## Results
-Results will be added after the relevant tests have been completed.
+All sample records are synthetic.
+No real customer data, employer information or credentials are included.
